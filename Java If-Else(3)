@@ -50,13 +50,11 @@ import java.util.regex.*;
 
 public class Solution {
 
-
-
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         int N = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");    //skips any newline, carriage & trailing characters
         
         if(N%2!=0){
             System.out.println("Weird");
@@ -76,3 +74,8 @@ public class Solution {
         scanner.close();
     }
 }
+
+NOTES
+‘\r\n’: Matches a carriage return followed by a line feed, representing a Windows-style line break.
+‘[\n\r\u2028\u2029\u0085]’: Matches any newline character '(\n)', carriage return character '(\r)', line separator character '(\u2028)', paragraph separator character '(\u2029)', or next line character '(\u0085)'.
+‘(...)?’: The '?' quantifier makes the entire pattern optional, allowing it to match zero or one occurrence of the pattern
